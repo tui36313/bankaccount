@@ -37,5 +37,9 @@ public class BankAccountRestController {
         repository.save(record);
         return record;
     }
+    @GetMapping("/customer/{customerId}")
+    public List<BankAccount> getAllCustomerId(@PathVariable int customerId) {
+        return repository.findByCustomerId(customerId);
+    }
 
 }
